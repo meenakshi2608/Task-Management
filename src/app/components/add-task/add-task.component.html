@@ -1,0 +1,26 @@
+<div class="add-task-container">
+    <h2>Add New Task</h2>
+    <form [formGroup]="addTaskForm" (ngSubmit)="addTask()">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input id="title" formControlName="title" />
+            <div *ngIf="addTaskForm.get('title')?.invalid && addTaskForm.get('title')?.touched" class="error">
+                <small *ngIf="addTaskForm.get('title')?.errors?.['required']">Title is required.</small>
+                <small *ngIf="addTaskForm.get('title')?.errors?.['minlength']">Title must be at least 3 characters
+                    long.</small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" formControlName="description"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="date">Date:</label>
+            <input id="date" type="date" formControlName="date" />
+        </div>
+
+        <button type="submit" [disabled]="addTaskForm.invalid">Add Task</button>
+    </form>
+</div>

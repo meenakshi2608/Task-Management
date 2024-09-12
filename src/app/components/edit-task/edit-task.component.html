@@ -1,0 +1,31 @@
+<h2>Edit Task</h2>
+
+<form [formGroup]="editTaskForm" (ngSubmit)="updateTask()" *ngIf="tasks">
+    <div class="form-group">
+        <label for="title">Title:</label>
+        <input id="title" formControlName="title" />
+        <div *ngIf="editTaskForm.get('title')?.invalid && editTaskForm.get('title')?.touched">
+            <small *ngIf="editTaskForm.get('title')?.errors?.['required']">Title is required.</small>
+            <small *ngIf="editTaskForm.get('title')?.errors?.['minlength']">
+                Title must be at least 3 characters long.
+            </small>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="date">Date:</label>
+        <input id="date" type="date" formControlName="date" />
+    </div>
+
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <input id="description" formControlName="description" />
+        <div *ngIf="editTaskForm.get('description')?.invalid && editTaskForm.get('description')?.touched">
+            <small *ngIf="editTaskForm.get('description')?.errors?.['maxlength']">
+                Description must be at most 200 characters long.
+            </small>
+        </div>
+    </div>
+
+    <button type="submit" [disabled]="editTaskForm.invalid">Update Task</button>
+</form>

@@ -1,0 +1,64 @@
+.card {
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  
+    .p-menubar {
+      background-color: #010101 !important;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+
+      .p-menuitem-text {
+        color: white !important;
+    }
+    
+      .p-menu-item {
+        cursor: pointer;
+      }
+
+
+      .p-menubar-root-list {
+        li {
+          a {
+            color: white;
+            font-weight: bold;
+            padding: 15px 20px;
+            font-size: 18px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+  
+            &:hover {
+              background-color: rgba(255, 255, 255, 0.2);
+            }
+  
+            &.active-link {
+              background-color: rgba(255, 255, 255, 0.3); // Lighter background for active link
+              color: #fff; // Keep text white, or change to black if preferred
+              border-radius: 5px;
+              box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); // Inner shadow for active effect
+            }
+          }
+        }
+    }
+
+     .p-menuitem-content:hover {
+        color: #495057 !important;
+        background: #50555a !important;
+    }
+    
+    }
+  }
+
+  .card .p-menubar .p-menubar-root-list li a {
+    background: black;
+}
+
+.router-active {
+  background-color: #007ad9 !important; /* Change the background color */
+  color: white !important; /* Active link color */
+  font-weight: bold; /* Bold active link */
+}
+
+.router-active:hover {
+  background-color: #005fa3; /* Change the hover color for active link */
+}
+  
