@@ -37,7 +37,7 @@ export class TasksComponent implements OnInit {
         description: '',
         date: new Date(),
         completed: false,
-      }; // Reset the form
+      };
     }
   }
 
@@ -56,7 +56,7 @@ export class TasksComponent implements OnInit {
 
   deleteTask(id: number): void {
     this.taskService.deleteTask(id);
-    this.tasks = this.taskService.getTasks(); // Ref
+    this.tasks = this.taskService.getTasks();
   }
 
   updateTask(task: Task): void {

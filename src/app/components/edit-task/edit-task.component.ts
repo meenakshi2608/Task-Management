@@ -41,15 +41,14 @@ export class EditTaskComponent implements OnInit {
     return d.toISOString().substring(0, 10);
   }
 
-  // Update task logic
   updateTask(): void {
     if (this.editTaskForm.valid) {
       const updatedTask = {
-        ...this.tasks, // Keep the original task properties (like ID)
-        ...this.editTaskForm.value, // Overwrite with updated form values
+        ...this.tasks,
+        ...this.editTaskForm.value,
       };
-      this.taskService.updateTask(updatedTask); // Call service to update task
-      this.router.navigate(['/tasks']); // Redirect to task list after updating
+      this.taskService.updateTask(updatedTask);
+      this.router.navigate(['/tasks']);
     }
   }
 }

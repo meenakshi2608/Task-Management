@@ -146,4 +146,7 @@ a, button {
   }
 }
 
-
+::ng-deep .p-menuitem-link-active{
+  background-color: #747167!important;
+  border-radius: 6px;
+}

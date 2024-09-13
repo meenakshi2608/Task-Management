@@ -26,7 +26,6 @@ export class HeaderComponent {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    // Listen to route changes and set the active route
     this.router.events.subscribe(() => {
       this.activeRoute = this.router.url;
     });
